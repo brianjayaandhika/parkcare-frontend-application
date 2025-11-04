@@ -17,6 +17,7 @@ export default function CheckOut() {
   const [inputValue, setInputValue] = useState<string>("");
   const [tickets, setTickets] = useState<Ticket[]>([]);
   const [currentTicket, setCurrentTicket] = useState<Ticket | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   async function getTicketDetail() {
     if (!inputValue.match("^[A-Z]{1,2}\\d{1,4}[A-Z]{0,3}$")) {
@@ -28,6 +29,7 @@ export default function CheckOut() {
 
     if (!response.errors) {
       setCurrentTicket(response.data);
+      setIsSubmitted(false);
     } else {
       await errorAlert(response.errors);
     }
@@ -43,6 +45,7 @@ export default function CheckOut() {
 
       if (!response.errors) {
         setCurrentTicket(response.data);
+        setIsSubmitted(true);
         getHistoryTickets();
         await successAlert("Ticket Has Been Submitted");
       } else {
@@ -93,7 +96,7 @@ export default function CheckOut() {
           <div className="flex flex-col gap-4 h-full">
             <TicketCard fontSize="text-xl" ticket={currentTicket!} />
             <button
-              disabled={!currentTicket}
+              disabled={!currentTicket || isSubmitted}
               onClick={(e) => {
                 e.preventDefault();
                 submitTicket();

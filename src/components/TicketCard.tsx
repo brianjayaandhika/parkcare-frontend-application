@@ -1,6 +1,6 @@
 import type { Ticket } from "../lib/types/tickets.types";
 import DateFormatter from "../utils/DateFormatter";
-import { PriceFormatter } from "../utils/priceFormatter";
+import PriceFormatter from "../utils/PriceFormatter";
 import TicketBody from "./TicketBody";
 
 export default function TicketCard({

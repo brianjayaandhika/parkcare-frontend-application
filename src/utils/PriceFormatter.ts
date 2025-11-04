@@ -1,4 +1,4 @@
-export function PriceFormatter(value: number): string {
+export default function PriceFormatter(value: number): string {
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",

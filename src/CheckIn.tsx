@@ -48,7 +48,7 @@ export default function CheckIn() {
         <Header
           title="Active Tickets"
           information={
-            tickets.length > 0 ? `${tickets.length} vehicles in parking` : ""
+            tickets?.length > 0 ? `${tickets?.length} vehicles in parking` : ""
           }
           customStyle="hidden! lg:flex!"
         />
@@ -77,7 +77,7 @@ export default function CheckIn() {
           />
           {/* Ticket Section */}
           <div className="flex flex-col gap-4 h-full">
-            <TicketCard fontSize="text-xl" ticket={tickets[0]} />
+            <TicketCard fontSize="text-xl" ticket={tickets && tickets[0]} />
           </div>
           <Link
             to={"/check-out"}
