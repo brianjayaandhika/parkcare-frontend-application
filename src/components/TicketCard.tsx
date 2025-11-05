@@ -36,15 +36,15 @@ export default function TicketCard({
           />
         </div>
 
-        <div className="flex justify-between items-center align-middle">
+        <div className="flex gap-2 flex-col justify-between items-center align-middle flex-wrap">
           <TicketBody
             label="Check Out"
             value={ticket?.checkOutAt ? DateFormatter(ticket?.checkOutAt) : "-"}
+            
           />
           <TicketBody
             label="Price"
             value={ticket?.price ? PriceFormatter(ticket?.price) : "0"}
-            customStyle={"self-end text-end"}
             textColor={ticket?.price ? "text-red-400 font-bold" : "text-white"}
           />
         </div>
