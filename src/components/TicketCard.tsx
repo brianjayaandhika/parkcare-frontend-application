@@ -11,11 +11,11 @@ export default function TicketCard({
   fontSize?: string;
 }) {
   return (
-    <div className="w-full grid grid-cols-2 gap-4 border border-gray-400 bg-[#151922]  font-semibold p-3 max-h-80 text-sm shadow-md shadow-sky-300/20 rounded-2xl text-[#8B93A7]">
+    <div className="w-full grid grid-cols-2 gap-4 border border-gray-400 bg-[#151922] font-semibold p-3 max-h-80 text-sm shadow-md shadow-sky-300/20 rounded-2xl text-[#8B93A7]">
       <div className="w-full flex flex-col gap-2 border-b-2 border-red-400 pb-2 col-span-2">
-        <div className="w-full flex justify-between items-center align-middle text-xs">
-          <h1 className="text-xl font-bold col-span-2 ">Ticket Id</h1>
-          <span className="text-end overflow-clip text-ellipsis whitespace-nowrap max-w-1/2 lg:max-w-full">
+        <div className="w-full flex gap-6 justify-between items-center align-middle text-xs">
+          <h1 className="text-xl font-bold col-span-2 text-nowrap">Ticket Id</h1>
+          <span className="text-end overflow-hidden text-ellipsis whitespace-nowrap max-w-1/3 lg:max-w-full">
             {ticket?.idReference ? ticket?.idReference : ticket?.id}
           </span>
         </div>
